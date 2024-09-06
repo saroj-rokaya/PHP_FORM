@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cc7c7c;
+}
+
+.container {
+  max-width: 500px;
+  width: 100%;
+  background-color: white;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container .title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #cc7c7c;
+  text-transform: uppercase;
+  text-align: center;
+}
+.container .form {
+  width: 100%;
+}
+
+.container .form .input_field {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.container .form .input_field label {
+  width: 200px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+.container .form .input_field input,
+.container .form .input_field .textarea {
+  width: 100%;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid #cc7c7c;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+.container .form .input_field .textarea {
+  resize: none;
+  height: 70px;
+}
+.container .form .input_field .costum_select{
+    position: relative;
+    width: 100%;
+    height: 37px;
+}
+.container .form .input_field .costum_select select{
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 8px 10px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #cc7c7c;
+  border-radius: 5px;
+  outline: none;
+}
+
+.container .form .input_field .costum_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid black;
+  border-color: red green pink black;
+  border-color: #cc7c7c transparent transparent transparent;
+  pointer-events: none;
+}
+.container .form .input_field .input:focus{
+    border: 1px solid purple;
+}
+
+.container .form .input_field .btn{
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #cc7c7c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .form .input_field .btn:active{
+  background-color: aqua;
+}
+
+@media (max-width: 420px){
+
+  .container .form .input_field{ 
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .container .form .input_field label{ 
+      margin-bottom: 5px;
+  }
+  .container .form .input_field .check{ 
+      flex-direction: row;
+  }
+}
