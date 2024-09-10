@@ -19,37 +19,37 @@
             <div class="form">
                 <div class="input_field">
                     <label>firstname</label>
-                    <input type="text" class="input" name="firstname">
+                    <input type="text" class="input" name="firstname" required>
                 </div>
                 <div class="input_field">
                     <label>lastname</label>
-                    <input type="text" class="input" name="lastname">
+                    <input type="text" class="input" name="lastname" required>
                 </div>
                 <div class="input_field">
                     <label>password</label>
-                    <input type="password" class="input" name="password">
+                    <input type="password" class="input" name="password" required>
                 </div>
                 <div class="input_field">
                     <label>confirm password</label>
-                    <input type="password" class="input" name="confirmpassword">
+                    <input type="password" class="input" name="confirmpassword" required>
                 </div>
                 <div class="input_field">
                     <label>gender</label>
                     <div class="costum_select">
-                        <select name="gender">
-                            <option>Select</option>
-                            <option>Male</option>
-                            <option>Female</option>
+                        <select name="gender" required>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
                         </select>
                     </div>
                 </div>
                 <div class="input_field">
                     <label>Email</label>
-                    <input type="text" class="input" name="email">
+                    <input type="text" class="input" name="email" required>
                 </div>
                 <div class="input_field">
                     <label>Phone Number</label>
-                    <input type="tel" class="input" name="phone">
+                    <input type="tel" class="input" name="phone" required>
                 </div>
                 <div class="input_field">
                     <label>Address</label>
@@ -85,13 +85,24 @@ if ($_POST['register']) {
     $phone           = $_POST['phone'];
     $address         = $_POST['address'];
 
-    $query = "INSERT INTO FORM value('$firstname','$lastname','$password','$confirmpassword','$gender','$email','$phone','$address')";
-    $data = mysqli_query($conn, $query);    
-    if ($query) {
-        echo "Registration Successful";
-    } else {
-        echo "Error! " . mysqli_error($conn);
+
+    if ($firstname != "" && $lastname != "" && $password != "" && $confirmpassword != "" && $gender != "" && $email != "" && $phone != "" && $address != "") 
+    {
+        $query = "INSERT INTO FORM value('$firstname','$lastname','$password','$confirmpassword','$gender','$email','$phone','$address')";
+        $data = mysqli_query($conn, $query);
+        if ($query) {
+            echo "Registration Successful";
+        } else {
+            echo "Error! " . mysqli_error($conn);
+        }
+    }
+    else{
+        echo "Please fill the input field";
     }
 }
+
+
+
+
 
 ?>
