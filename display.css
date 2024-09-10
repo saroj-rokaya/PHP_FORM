@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+    background-color: aquamarine;
+    font-family: Arial, sans-serif;
+    
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: whitesmoke;
+    /* margin: 10px 0; */
+    min-height: 100vh;
+    
+}
+.tablehead{
+    padding: 10px;
+    background-color: darkgray;
+}

@@ -5,42 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Display Data</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: antiquewhite;
-        }
+    <link rel="stylesheet" href="display.css">
+    <link rel="stylesheet" href="/components/navbar/navbar.css">
+    <link rel="stylesheet" href="/components/footer/footer.css">
 
-        table {
-            margin: 0 auto;
-            border-collapse: collapse;
-            text-align: center;
-            background-color: white;
-        }
-    </style>
 </head>
 
 <body>
-
+    <?php include './components/navbar/navbar.php'?>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php
 include("db_connect.php");
@@ -52,16 +27,15 @@ $data = mysqli_query($conn, $query);
 $total = mysqli_num_rows($data);
 $result = mysqli_fetch_assoc($data);
 ?>
-<h2 style="text-align: center"> <mark> Displaying Records </mark></h2>
 <center>
-    <table border="1" width="60%">
+    <table border="1">
         <tr>
-            <th width="10%">firstname</th>
-            <th width="10%">lastname</th>
-            <th width="10%">gender</th>
-            <th width="10%">email</th>
-            <th width="10%">phone</th>
-            <th width="10%">address</th>
+            <th class="tablehead">firstname</th>
+            <th class="tablehead">lastname</th>
+            <th class="tablehead">gender</th>
+            <th class="tablehead">email</th>
+            <th class="tablehead">phone</th>
+            <th class="tablehead">address</th>
         </tr>
         <?php
         if ($total != 0) {
@@ -73,8 +47,7 @@ $result = mysqli_fetch_assoc($data);
                     <td>" . $result['gender'] . "</td>
                     <td>" . $result['email'] . "</td>
                     <td>" . $result['phone'] . "</td>
-                    <td>" . $result['address'] . "</td>
-                    
+                    <td>" . $result['address'] . "</td>                    
                 </tr> ";
             }
         } else {
@@ -83,5 +56,6 @@ $result = mysqli_fetch_assoc($data);
         ?>
     </table>
 </center>
+<?php include './components/footer/footer.php'?>
 
 <!-- echo $result['firstname'] . " " . $result['lastname'] . " " . $result['gneder'] . " " . $result['email'] . " " . $result['phone'] . " " . $result['address'] . "</br>"; -->

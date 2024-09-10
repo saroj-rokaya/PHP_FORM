@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/components//navbar/navbar.css">
 </head>
 
 <body>
+    <?php include './components/navbar/navbar.php' ?>
     <div class="container">
         <form action="" method="POST">
             <div class="title">
@@ -86,8 +88,7 @@ if ($_POST['register']) {
     $address         = $_POST['address'];
 
 
-    if ($firstname != "" && $lastname != "" && $password != "" && $confirmpassword != "" && $gender != "" && $email != "" && $phone != "" && $address != "") 
-    {
+    if ($firstname != "" && $lastname != "" && $password != "" && $confirmpassword != "" && $gender != "" && $email != "" && $phone != "" && $address != "") {
         $query = "INSERT INTO FORM value('$firstname','$lastname','$password','$confirmpassword','$gender','$email','$phone','$address')";
         $data = mysqli_query($conn, $query);
         if ($query) {
@@ -95,8 +96,7 @@ if ($_POST['register']) {
         } else {
             echo "Error! " . mysqli_error($conn);
         }
-    }
-    else{
+    } else {
         echo "Please fill the input field";
     }
 }
