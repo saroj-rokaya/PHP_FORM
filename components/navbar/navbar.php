@@ -16,7 +16,7 @@
                 <h1>PHP-CRUD</h1>
             </div>
             <div class="navbar-buttons">                
-                <a class="btn btn-primary" href="/form.php">Form</a>
+                <a class="btn btn-primary" href="/index.php">Form</a>
                 <a class="btn btn-secondary" href="/display.php">Data</a>
             </div>
         </div>
